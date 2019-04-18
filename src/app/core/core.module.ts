@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { CoreRoutingModule } from './core-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { NodeListComponent } from '../node/pages/node-list/node-list.component';
+import {NodesModule} from '../node/nodes/nodes.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { NodeListComponent } from '../node/pages/node-list/node-list.component';
   ],
   imports: [
     BrowserModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    NodesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
