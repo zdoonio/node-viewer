@@ -1,8 +1,12 @@
-<div *ngIf = "node" (click)="showHideSubNodes()">
-  <h2>{{ node.nodeId }} : {{node.name}}<ng-container *ngIf="isShow; else plus" ><p>-</p></ng-container></h2>
+<div *ngIf = "node" >
+  <h2>{{ node.nodeId }} : {{node.name}}</h2>
+  <button type="button" (click)="showHideSubNodes()"><ng-container *ngIf="isShow; else plus" ><p>-</p></ng-container></button>
   <div *ngIf="isShow">
     <div *ngFor="let node of node.nodes;">
-      <p style="padding-left: 40px"> {{node.nodeId}} : {{node.name}} </p>
+      <h3 style="padding-left: 40px"> {{node.nodeId}} : {{node.name}} </h3>
+      <div *ngFor="let subNode of node.nodes">
+        <h4 style="padding-left: 80px">{{subNode.nodeId}} : {{subNode.name}}</h4>
+      </div>
     </div>
   </div>
 </div>
